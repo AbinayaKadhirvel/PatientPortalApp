@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+  <meta name="author" content="GeeksLabs">
+  <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+  <link rel="shortcut icon" href="img/favicon.png">
+
+  <title><%=title%></title>
+
+  <!-- Bootstrap CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- bootstrap theme -->
+  <link href="/css/bootstrap-theme.css" rel="stylesheet">
+  <!--external css-->
+  <!-- font icon -->
+  <link href="/css/elegant-icons-style.css" rel="stylesheet" />
+  <link href="/css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles -->
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/css/style-responsive.css" rel="stylesheet" />
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+  <!--[if lt IE 9]>
+      <script src="/js/html5shiv.js"></script>
+      <script src="/js/respond.min.js"></script>
+      <script src="/js/lte-ie7.js"></script>
+    <![endif]-->
+
+    <!-- =======================================================
+      Theme Name: NiceAdmin
+      Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+      Author: BootstrapMade
+      Author URL: https://bootstrapmade.com
+    ======================================================= -->
+</head>
+
+<body>
+  <!-- container section start -->
+  <section id="container" class="">
+    <!--header start-->
+    <header class="header dark-bg">
+
+
+      <!--logo start-->
+      <a href="index.html" class="logo"><%=firstname%> <span class="lite"><%=lastname%></span></a>
+      <!--logo end-->
+<!--  search form start -->
+      <!-- <div class="nav search-row" id="top_menu">
+
+        <ul class="nav top-menu">
+          <li>
+            <form class="navbar-form">
+              <input class="form-control" placeholder="Search" type="text">
+            </form>
+          </li>
+        </ul>
+
+
+<!--  search form end -->
+ 	</div>
+
+      </div>
+    </header>
+    <!--header end-->
+
+
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-user-md"></i> Profile</h3>
+
+          </div>
+        </div>
+        <div class="row">
+          <!-- profile-widget -->
+          <div class="col-lg-12">
+            <div class="profile-widget profile-widget-info">
+              <div class="panel-body">
+                <div class="col-lg-2 col-sm-2">
+                  <h4><%=firstname%> <%=lastname%></h4>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- page start-->
+        <div class="row">
+          <div class="col-lg-12">
+            <section class="panel">
+              <header class="panel-heading tab-bg-info">
+                <ul class="nav nav-tabs">
+
+                  <li id='profiletab' class="active">
+                    <a data-toggle="tab" href="#profile">
+                                          <i class="icon-user"></i>
+                                          Profile
+                                      </a>
+                  </li>
+                  <li id='editprofiletab' class="">
+                    <a data-toggle="tab" href="#edit-profile">
+                                          <i class="icon-envelope"></i>
+                                          Edit Profile
+                                      </a>
+                  </li>
+                </ul>
+              </header>
+              <div class="panel-body">
+                <div class="tab-content">
+
+                  <!-- profile -->
+                  <div id="profile" class="tab-pane  active">
+                    <section class="panel">
+                      <div class="bio-graph-heading">
+                        <h1>Bio Graph</h1>
+                      </div>
+                      <div class="panel-body bio-graph-info">
+
+                        <div class="row">
+                          <div class="bio-row">
+                            <p><span>First Name </span><%=user.firstname%></p>
+                          </div>
+                          <div class="bio-row">
+                            <p><span>Last Name </span><%=user.lastname%></p>
+                          </div>
+
+                          <div class="bio-row">
+                            <p><span>Email </span><%=user.email%></p>
+                          </div>
+                          <div class="bio-row">
+                            <p><span>Mobile </span><%=user.mobilenumber%></p>
+                          </div>
+
+                        </div>
+                      </div>
+                    </section>
+                    <section>
+                      <div class="row">
+                      </div>
+                    </section>
+                  </div>
+                  <!-- edit-profile -->
+                  <div id="edit-profile" class="tab-pane">
+                    <section class="panel">
+                      <div class="panel-body bio-graph-info">
+                        <h1> Profile Info</h1>
+                        <form class="form-horizontal" method="put" action="/portaluser/profile" role="form">
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">First Name</label>
+                            <div class="col-lg-6">
+                              <input type="text" class="form-control" id="f-name" value="<%=user.firstname%>"placeholder=" ">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Last Name</label>
+                            <div class="col-lg-6">
+                              <input type="text" class="form-control" value="<%=user.lastname%>" id="l-name" placeholder=" ">
+                            </div>
+                          </div>
+
+
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Email</label>
+                            <div class="col-lg-6">
+                              <input type="text" readonly class="form-control" id="email" value="<%=user.email%>"placeholder=" ">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Mobile</label>
+                            <div class="col-lg-6">
+                              <input type="text" class="form-control" id="mobile" value="<%=user.mobilenumber%>" placeholder=" ">
+                            </div>
+                          </div>
+
+
+                          <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                              <button type="submit" class="btn btn-primary">Save</button>
+                              <button type="button" class="btn btn-danger">Cancel</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- page end-->
+      </section>
+    </section>
+
+  </section>
+  <!-- container section end -->
+  <!-- javascripts -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <!-- nice scroll -->
+  <script src="/js/jquery.scrollTo.min.js"></script>
+  <script src="/js/jquery.nicescroll.js" type="text/javascript"></script>
+
+  <!--custome script for all page-->
+  <script src="/js/scripts.js"></script>
+  <script src="/js/profile.js"></script>
+
+
+
+</body>
+
+</html>
