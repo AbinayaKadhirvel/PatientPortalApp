@@ -30,10 +30,14 @@ function router(PortalUser) {
       }
     });
   authRouter.route('/signin')
+  .get((req, res) => {
+          res.redirect('/');
+  })
     .post(passport.authenticate('local', {
       successRedirect: '/portaluser/profile',
-      failureRedirect: '/',
+      failureRedirect: '/?loginerror=1',
     }));
+
   return authRouter;
 }
 
