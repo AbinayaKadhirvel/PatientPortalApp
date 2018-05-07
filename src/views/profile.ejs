@@ -46,7 +46,7 @@
 
 
       <!--logo start-->
-      <a href="index.html" class="logo"><%=firstname%> <span class="lite"><%=lastname%></span></a>
+      <a href="index.html" class="logo"><%=user.firstname%> <span class="lite"><%=user.lastname%></span></a>
       <!--logo end-->
 <!--  search form start -->
       <!-- <div class="nav search-row" id="top_menu">
@@ -83,8 +83,8 @@
             <div class="profile-widget profile-widget-info">
               <div class="panel-body">
                 <div class="col-lg-2 col-sm-2">
-                  <h4><%=firstname%> <%=lastname%></h4>
-
+                  <h4><%=user.firstname%> <%=user.lastname%></h4>
+                 <h4 class='notification-row'><a href='/logout'>Log out</a></h4>
                 </div>
 
               </div>
@@ -151,17 +151,17 @@
                     <section class="panel">
                       <div class="panel-body bio-graph-info">
                         <h1> Profile Info</h1>
-                        <form class="form-horizontal" method="put" action="/portaluser/profile" role="form">
+                        <form class="form-horizontal" method="post" action="/portaluser/profile" role="form">
                           <div class="form-group">
                             <label class="col-lg-2 control-label">First Name</label>
                             <div class="col-lg-6">
-                              <input type="text" class="form-control" id="f-name" value="<%=user.firstname%>"placeholder=" ">
+                              <input name='firstname' type="text" class="form-control" id="f-name" value="<%=user.firstname%>"placeholder=" ">
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Last Name</label>
                             <div class="col-lg-6">
-                              <input type="text" class="form-control" value="<%=user.lastname%>" id="l-name" placeholder=" ">
+                              <input name='lastname'type="text" class="form-control" value="<%=user.lastname%>" id="l-name" placeholder=" ">
                             </div>
                           </div>
 
@@ -169,13 +169,13 @@
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Email</label>
                             <div class="col-lg-6">
-                              <input type="text" readonly class="form-control" id="email" value="<%=user.email%>"placeholder=" ">
+                              <input name='email' type="text" readonly class="form-control" id="email" value="<%=user.email%>"placeholder=" ">
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Mobile</label>
                             <div class="col-lg-6">
-                              <input type="text" class="form-control" id="mobile" value="<%=user.mobilenumber%>" placeholder=" ">
+                              <input name='mobilenumber' type="text" class="form-control" id="mobile" value="<%=user.mobilenumber%>" placeholder=" ">
                             </div>
                           </div>
 
